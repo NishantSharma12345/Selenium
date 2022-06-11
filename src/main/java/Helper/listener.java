@@ -12,7 +12,7 @@ public class listener implements ITestListener
     {
         Reporter.log("onFinish method finished");
 
-        System.out.println("onFinish method finished "+arg0.getName());
+      //  System.out.println("onFinish method finished "+arg0.getName());
         // TODO Auto-generated method stub
 
     }

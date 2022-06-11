@@ -1,18 +1,37 @@
 package Pages;
 
+import BaseClass.baseClass;
+import Helper.actionHandler;
+import Helper.log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 import static BaseClass.baseClass.pros;
 
-public class addressPage
+public class addressPage extends baseClass
 {
+    @FindBy(xpath = "//span[.=\"Sign in\"]")
+    private WebElement signinbtn;
 
-    @FindBy(xpath = "//a[@id=\"address-link\"]//span[@class = \"link-item\"]")
+    @FindBy(id = "field-email")
+    private WebElement email;
+
+    @FindBy(id = "field-password")
+    private WebElement password;
+
+    @FindBy(id = "submit-login")
+    private WebElement loginBtn;
+
+
+
+    @FindBy(xpath = "//a[@id=\"addresses-link\"]//span[@class = \"link-item\"]")
     private WebElement addAddressbtn;
+    @FindBy(xpath = "//span[.=\"Create new address\"]")
+    private WebElement createNewAddressBtn;
     @FindBy(xpath = "//input[@name=\"alias\"]")
     private WebElement alias;
     @FindBy(xpath = "//input[@name=\"company\"]")
@@ -42,7 +61,18 @@ public class addressPage
 
     public void addAddressPerform() throws InterruptedException
     {
-        addAddressbtn.click();
+        actionHandler.click(signinbtn);
+        email.sendKeys(super.pros.getProperty("email"));
+        password.sendKeys(super.pros.getProperty("password"));
+        loginBtn.click();
+        Thread.sleep(2000);
+
+
+        Reporter.log("Add Address Test Start");
+        log.startTestCase("Start Add Address Test");
+        actionHandler.click(addAddressbtn);
+        Thread.sleep(1000);
+        actionHandler.click(createNewAddressBtn);
         Thread.sleep(1000);
         alias.sendKeys(pros.getProperty("alias"));
         company.sendKeys(pros.getProperty("company"));
@@ -54,5 +84,7 @@ public class addressPage
         dropdownState.selectByVisibleText(pros.getProperty("state"));
         phone.sendKeys(pros.getProperty("phone"));
         saveAddressbtn.click();
+        log.endTestCase("End Add Address Test");
+        Reporter.log("Add Address Test End");
     }
 }

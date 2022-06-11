@@ -1,10 +1,12 @@
 package Pages;
 
 import Helper.actionHandler;
+import Helper.log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 import static BaseClass.baseClass.pros;
 
@@ -43,8 +45,11 @@ public class createAccountPage
 
     public void createAnAccountPerform() throws InterruptedException
     {
+        Reporter.log("Create Account Test Start");
+        log.startTestCase("Create Account Login Test");
+        Thread.sleep(1000);
         actionHandler.click(signinbtn);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         noAccountbtn.click();
         Thread.sleep(2000);
         socialTitleRadiobtn.click();
@@ -59,5 +64,7 @@ public class createAccountPage
         termsConditionCheckboxbtn.click();
         saveAccountbtn.click();
         Thread.sleep(2000);
+        log.endTestCase("End Create Account Test");
+        Reporter.log("Create Account Test End");
     }
 }
