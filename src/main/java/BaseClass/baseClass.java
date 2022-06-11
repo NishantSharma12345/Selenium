@@ -1,21 +1,24 @@
 package BaseClass;
+import Helper.listener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class baseClass {
-
+@Listeners(listener.class)
+public class baseClass
+{
     public static WebDriver driver;
     public static Properties pros;
     public baseClass()
     {
         try
         {
-            pros=new Properties();
+            pros = new Properties();
             FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/Config/config.properties");
             pros.load(fs);
         }
@@ -30,7 +33,7 @@ public class baseClass {
     {
         if(pros.getProperty("browser").equals("chrome"))
         {
-            driver= WebDriverManager.chromedriver().create();
+            driver = WebDriverManager.chromedriver().create();
             driver.get(pros.getProperty("url"));
             driver.manage().window().maximize();
         }
