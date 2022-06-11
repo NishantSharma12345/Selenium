@@ -1,6 +1,7 @@
 package BaseClass;
 import Helper.listener;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -31,6 +32,7 @@ public class baseClass
     @BeforeSuite
     public void setup()
     {
+        DOMConfigurator.configure("log4j.xml");
         if(pros.getProperty("browser").equals("chrome"))
         {
             driver = WebDriverManager.chromedriver().create();
