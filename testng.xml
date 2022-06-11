@@ -7,6 +7,9 @@
     <test verbose="2" preserve-order="true" name="C:/Users/ASUS/IdeaProjects/Selenium">
         <classes>
             <class name="Pages.loginPageTest"></class>
+            <class name="Pages.createAccountPageTest"></class>
+            <class name="Pages.homePageTest"></class>
+            <class name="Pages.addressPageTest"></class>
         </classes>
     </test>
 </suite>
