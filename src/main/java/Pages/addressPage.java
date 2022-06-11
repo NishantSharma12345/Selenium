@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 import static BaseClass.baseClass.pros;
@@ -67,10 +68,10 @@ public class addressPage extends baseClass
         loginBtn.click();
         Thread.sleep(2000);
 
-
         Reporter.log("Add Address Test Start");
         log.startTestCase("Start Add Address Test");
         actionHandler.click(addAddressbtn);
+        Assert.assertEquals("Addresses", driver.getTitle());
         Thread.sleep(1000);
         actionHandler.click(createNewAddressBtn);
         Thread.sleep(1000);

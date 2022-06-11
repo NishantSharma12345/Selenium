@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 public class loginPage extends baseClass
@@ -35,6 +36,7 @@ public class loginPage extends baseClass
         if(signinbtn != null)
         {
             actionHandler.click(signinbtn);
+            Assert.assertEquals("Login", driver.getTitle());
             email.sendKeys(super.pros.getProperty("email"));
             password.sendKeys(super.pros.getProperty("password"));
             loginBtn.click();

@@ -11,20 +11,20 @@
       <![CDATA[Login Test End]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-06-12T01:34:47 IST" name="Default Suite" finished-at="2022-06-12T01:34:51 IST" duration-ms="3524">
+  <suite started-at="2022-06-12T02:21:39 IST" name="Default Suite" finished-at="2022-06-12T02:21:43 IST" duration-ms="3570">
     <groups>
     </groups>
-    <test started-at="2022-06-12T01:34:47 IST" name="Selenium" finished-at="2022-06-12T01:34:51 IST" duration-ms="3524">
+    <test started-at="2022-06-12T02:21:39 IST" name="Selenium" finished-at="2022-06-12T02:21:43 IST" duration-ms="3570">
       <class name="Pages.loginPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Pages.loginPageTest@527e5409]" started-at="2022-06-12T01:34:45 IST" name="setup" finished-at="2022-06-12T01:34:47 IST" duration-ms="2203" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Pages.loginPageTest@402e37bc]" started-at="2022-06-12T02:21:37 IST" name="setup" finished-at="2022-06-12T02:21:39 IST" duration-ms="2564" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="init()[pri:0, instance:Pages.loginPageTest@527e5409]" started-at="2022-06-12T01:34:47 IST" name="init" finished-at="2022-06-12T01:34:47 IST" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:Pages.loginPageTest@402e37bc]" started-at="2022-06-12T02:21:39 IST" name="init" finished-at="2022-06-12T02:21:39 IST" duration-ms="21" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="loginPerformTest()[pri:0, instance:Pages.loginPageTest@527e5409]" started-at="2022-06-12T01:34:47 IST" name="loginPerformTest" finished-at="2022-06-12T01:34:51 IST" duration-ms="3489" status="PASS">
+        <test-method signature="loginPerformTest()[pri:0, instance:Pages.loginPageTest@402e37bc]" started-at="2022-06-12T02:21:40 IST" name="loginPerformTest" finished-at="2022-06-12T02:21:43 IST" duration-ms="3531" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login Test Start]]>
@@ -34,7 +34,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginPerformTest -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:Pages.loginPageTest@527e5409]" started-at="2022-06-12T01:34:51 IST" name="exit" finished-at="2022-06-12T01:34:51 IST" duration-ms="44" status="PASS">
+        <test-method is-config="true" signature="exit()[pri:0, instance:Pages.loginPageTest@402e37bc]" started-at="2022-06-12T02:21:43 IST" name="exit" finished-at="2022-06-12T02:21:43 IST" duration-ms="48" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->

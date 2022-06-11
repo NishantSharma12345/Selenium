@@ -1,16 +1,18 @@
 package Pages;
 
+import BaseClass.baseClass;
 import Helper.actionHandler;
 import Helper.log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 import static BaseClass.baseClass.pros;
 
-public class createAccountPage
+public class createAccountPage extends baseClass
 {
     WebDriver driver;
 
@@ -52,6 +54,7 @@ public class createAccountPage
         Thread.sleep(1000);
         noAccountbtn.click();
         Thread.sleep(2000);
+        Assert.assertEquals("Login", driver.getTitle());
         socialTitleRadiobtn.click();
         firstname.sendKeys(pros.getProperty("firstname"));
         lastname.sendKeys(pros.getProperty("lastname"));

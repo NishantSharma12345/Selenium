@@ -1,13 +1,19 @@
 package BaseClass;
 import Helper.listener;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.xml.DOMConfigurator;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 @Listeners(listener.class)
@@ -38,7 +44,16 @@ public class baseClass
             driver = WebDriverManager.chromedriver().create();
             driver.get(pros.getProperty("url"));
             driver.manage().window().maximize();
+            //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
+    }
+
+    public void screenCapture() throws IOException
+    {
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screenshotName = new File("C:\\Users\\ASUS\\IdeaProjects\\ActionHandler\\test-output\\screenshots\\"+driver.getTitle()+".png");
+        FileUtils.copyFile(scrFile,screenshotName);
+        Reporter.log("<br><img src='"+screenshotName+"' height='400' width='400'/><br>");
     }
 
     @AfterSuite
