@@ -36,10 +36,11 @@ public class loginPage extends baseClass
         if(signinbtn != null)
         {
             actionHandler.click(signinbtn);
-            Assert.assertEquals("Login", driver.getTitle());
             email.sendKeys(super.pros.getProperty("email"));
+            Assert.assertEquals("Login", driver.getTitle());
             password.sendKeys(super.pros.getProperty("password"));
             loginBtn.click();
+
             log.info("Complete Test");
         }
         else
