@@ -28,7 +28,7 @@ public class actionHandler extends baseClass
     {
         builder.dragAndDropBy(element,xOffset,yOffset).perform();
     }
-    static void moveToElement(WebElement element)
+    public static void moveToElement(WebElement element)
     {
         builder.moveToElement(element).perform();
     }
@@ -48,6 +48,7 @@ public class actionHandler extends baseClass
     {
         builder.moveByOffset(xOffset, yOffset);
     }
+
     public static void moveToElement(WebElement element,int xOffset,int yOffset)
     {
         builder.moveToElement(element,xOffset, yOffset);

@@ -12,4 +12,8 @@
             <class name="Pages.addressPageTest"></class>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true" parallel="classes" name="C:/Users/ASUS/IdeaProjects/Selenium">
+        <classes>
+        </classes>
+    </test>
 </suite>

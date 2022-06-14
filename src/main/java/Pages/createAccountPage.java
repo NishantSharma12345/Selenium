@@ -16,10 +16,6 @@ public class createAccountPage extends baseClass
 {
     WebDriver driver;
 
-    @FindBy(xpath = "//span[.=\"Sign in\"]")
-    private WebElement signinbtn;
-    @FindBy(xpath = "//a[contains(.,\"No account\")]")
-    private WebElement noAccountbtn;
     @FindBy(xpath = "//input[@type=\"radio\" and @value =\"1\"]")
     private WebElement socialTitleRadiobtn;
     @FindBy(xpath = "//input[@name=\"firstname\"]")
@@ -39,6 +35,7 @@ public class createAccountPage extends baseClass
     @FindBy(xpath = "//button[contains(.,\"Save\")]")
     private WebElement saveAccountbtn;
 
+
     public  createAccountPage(WebDriver driver)
     {
         this.driver = driver;
@@ -49,12 +46,9 @@ public class createAccountPage extends baseClass
     {
         Reporter.log("Create Account Test Start");
         log.startTestCase("Create Account Login Test");
-        Thread.sleep(1000);
-        actionHandler.click(signinbtn);
-        Thread.sleep(1000);
-        noAccountbtn.click();
-        Thread.sleep(2000);
         Assert.assertEquals("Login", driver.getTitle());
+        Thread.sleep(1000);
+
         socialTitleRadiobtn.click();
         firstname.sendKeys(pros.getProperty("firstname"));
         lastname.sendKeys(pros.getProperty("lastname"));
@@ -66,6 +60,7 @@ public class createAccountPage extends baseClass
         Thread.sleep(1000);
         termsConditionCheckboxbtn.click();
         saveAccountbtn.click();
+
         Thread.sleep(2000);
         log.endTestCase("End Create Account Test");
         Reporter.log("Create Account Test End");

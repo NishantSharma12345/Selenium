@@ -48,12 +48,18 @@ public class baseClass
         }
     }
 
-    public void screenCapture() throws IOException
+    public static void screenCapture() throws IOException
     {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        File screenshotName = new File("C:\\Users\\ASUS\\IdeaProjects\\ActionHandler\\test-output\\screenshots\\"+driver.getTitle()+".png");
+
+        String currentDate = dateClass.dateFormat();
+        File screenshotName = new File("C://Users//ASUS//IdeaProjects//Selenium//test-output//screenshots//" + currentDate + ".png");
         FileUtils.copyFile(scrFile,screenshotName);
-        Reporter.log("<br><img src='"+screenshotName+"' height='400' width='400'/><br>");
+        Reporter.log("<br><img src='"+ screenshotName +"' height='400' width='400'/><br>");
+
+        //File screenshotName= new File(System.getProperty("user.dir")+"//test-output//screenshots//" + currentDate + ".png");
+        //File screenshotName = new File("//home//users//nishant.sharma//IdeaProjects//Selenium-IntelliJ-IDEA-main//test-output//screenshots//" + driver.getTitle()+Math.random() + ".png");
+        //File screenshotName = new File("//home//users//nishant.sharma//IdeaProjects//Selenium-IntelliJ-IDEA-main//test-output//screenshots//" + currentDate + ".png");
     }
 
     @AfterSuite

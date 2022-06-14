@@ -6,18 +6,19 @@ import org.testng.annotations.Test;
 
 public class homePageTest extends baseClass
 {
-    homePage obj;
-
+    homePage hp;
     @BeforeClass
     void init()
     {
-        obj = new homePage(driver);
+        hp = new homePage(driver);
         System.out.println("Homepage Test");
     }
 
     @Test
     public void homepagePerformTest() throws InterruptedException
     {
-        obj.homePagePerform();
+        hp.subCategoryClickPerform();
+        hp.changeLanguagePerform();
+        hp.searchPerform();
     }
 }

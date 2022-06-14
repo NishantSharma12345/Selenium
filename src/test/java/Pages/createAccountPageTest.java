@@ -6,19 +6,27 @@ import org.testng.annotations.Test;
 
 public class createAccountPageTest extends baseClass
 {
-    createAccountPage obj;
+    homePage hp;
+    loginPage lp;
+    createAccountPage cap;
+
 
     @BeforeClass
     void init()
     {
-        obj = new createAccountPage(driver);
+        hp = new homePage(driver);
+        lp = new loginPage(driver);
+        cap = new createAccountPage(driver);
+
         System.out.println("Create Account Page Test");
     }
 
     @Test
     public void createAnAccountPerformTest() throws InterruptedException
     {
-        obj.createAnAccountPerform();
+        hp.homepageToSigninPerform();
+        lp.noAccountOptionPerform();
+        cap.createAnAccountPerform();
     }
 
 }

@@ -10,11 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import java.io.IOException;
+
 public class loginPage extends baseClass
 {
-    @FindBy(xpath = "//span[.=\"Sign in\"]")
-    private WebElement signinbtn;
-
     @FindBy(id = "field-email")
     private WebElement email;
 
@@ -24,34 +23,35 @@ public class loginPage extends baseClass
     @FindBy(id = "submit-login")
     private WebElement loginBtn;
 
+
+    @FindBy(xpath = "//a[contains(.,\"No account\")]")
+    private WebElement noAccountbtn;
+
     public loginPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
 
-    public void loginPerform() throws InterruptedException
+    public void noAccountOptionPerform() throws InterruptedException
+    {
+        Thread.sleep(1000);
+        noAccountbtn.click();
+    }
+
+    public void loginPerform() throws InterruptedException, IOException
     {
         Reporter.log("Login Test Start");
         log.startTestCase("Start Login Test");
-        if(signinbtn != null)
-        {
-            actionHandler.click(signinbtn);
-            email.sendKeys(super.pros.getProperty("email"));
-            Assert.assertEquals("Login", driver.getTitle());
-            password.sendKeys(super.pros.getProperty("password"));
-            loginBtn.click();
+        Thread.sleep(1000);
 
-            log.info("Complete Test");
-        }
-        else
-        {
-            log.error("Failed Test");
-        }
+        screenCapture();
+        email.sendKeys(super.pros.getProperty("email"));
+        Assert.assertEquals("Login", driver.getTitle());
+        password.sendKeys(super.pros.getProperty("password"));
+        loginBtn.click();
+
         log.endTestCase("End Login Test");
         Reporter.log("Login Test End");
         Thread.sleep(2000);
     }
-
-
-
 }

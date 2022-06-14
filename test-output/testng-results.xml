@@ -1,40 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[onStart method finishedSelenium]]>
     </line>
     <line>
+      <![CDATA[onTestStart method finishedloginPerformTest]]>
+    </line>
+    <line>
       <![CDATA[Login Test Start]]>
     </line>
     <line>
-      <![CDATA[Login Test End]]>
+      <![CDATA[onTestFailure method finishedloginPerformTest]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-06-12T17:31:18 IST" name="Default Suite" finished-at="2022-06-12T17:31:21 IST" duration-ms="3674">
+  <suite started-at="2022-06-14T23:50:08 IST" name="Default Suite" finished-at="2022-06-14T23:50:11 IST" duration-ms="2781">
     <groups>
     </groups>
-    <test started-at="2022-06-12T17:31:18 IST" name="Selenium" finished-at="2022-06-12T17:31:21 IST" duration-ms="3674">
+    <test started-at="2022-06-14T23:50:08 IST" name="Selenium" finished-at="2022-06-14T23:50:11 IST" duration-ms="2781">
       <class name="Pages.loginPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-12T17:31:15 IST" name="setup" finished-at="2022-06-12T17:31:18 IST" duration-ms="2540" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:06 IST" name="setup" finished-at="2022-06-14T23:50:08 IST" duration-ms="2278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="init()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-12T17:31:18 IST" name="init" finished-at="2022-06-12T17:31:18 IST" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:08 IST" name="init" finished-at="2022-06-14T23:50:08 IST" duration-ms="23" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="loginPerformTest()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-12T17:31:18 IST" name="loginPerformTest" finished-at="2022-06-12T17:31:21 IST" duration-ms="3639" status="PASS">
+        <test-method signature="loginPerformTest()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:08 IST" name="loginPerformTest" finished-at="2022-06-14T23:50:11 IST" duration-ms="2733" status="FAIL">
+          <exception class="java.io.IOException">
+            <message>
+              <![CDATA[The filename, directory name, or volume label syntax is incorrect]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.IOException: The filename, directory name, or volume label syntax is incorrect
+at java.base/java.io.WinNTFileSystem.canonicalize0(Native Method)
+at java.base/java.io.WinNTFileSystem.canonicalize(WinNTFileSystem.java:462)
+at java.base/java.io.File.getCanonicalPath(File.java:626)
+at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:1064)
+at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:1028)
+at BaseClass.baseClass.screenCapture(baseClass.java:62)
+at Pages.loginPage.loginPerform(loginPage.java:48)
+at Pages.loginPageTest.loginPerformTest(loginPageTest.java:26)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.IOException -->
           <reporter-output>
+            <line>
+              <![CDATA[onTestStart method finishedloginPerformTest]]>
+            </line>
             <line>
               <![CDATA[Login Test Start]]>
             </line>
             <line>
-              <![CDATA[Login Test End]]>
+              <![CDATA[onTestFailure method finishedloginPerformTest]]>
             </line>
           </reporter-output>
         </test-method> <!-- loginPerformTest -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-12T17:31:21 IST" name="exit" finished-at="2022-06-12T17:31:21 IST" duration-ms="47" status="PASS">
+        <test-method is-config="true" signature="exit()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:11 IST" name="exit" finished-at="2022-06-14T23:50:11 IST" duration-ms="41" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->

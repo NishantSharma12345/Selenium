@@ -4,21 +4,26 @@ import BaseClass.baseClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class loginPageTest extends baseClass
 {
-    loginPage obj;
+    homePage hp;
+    loginPage lp;
 
     @BeforeClass
     void init()
     {
-        obj = new loginPage(driver);
+        hp = new homePage(driver);
+        lp = new loginPage(driver);
         System.out.println("Login Page Test");
     }
 
     @Test
-    public void loginPerformTest() throws InterruptedException
+    public void loginPerformTest() throws InterruptedException, IOException
     {
-        obj.loginPerform();
+        hp.homepageToSigninPerform();
+        lp.loginPerform();
     }
 
 }

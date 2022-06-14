@@ -15,20 +15,6 @@ import static BaseClass.baseClass.pros;
 
 public class addressPage extends baseClass
 {
-    @FindBy(xpath = "//span[.=\"Sign in\"]")
-    private WebElement signinbtn;
-
-    @FindBy(id = "field-email")
-    private WebElement email;
-
-    @FindBy(id = "field-password")
-    private WebElement password;
-
-    @FindBy(id = "submit-login")
-    private WebElement loginBtn;
-
-
-
     @FindBy(xpath = "//a[@id=\"addresses-link\"]//span[@class = \"link-item\"]")
     private WebElement addAddressbtn;
     @FindBy(xpath = "//span[.=\"Create new address\"]")
@@ -62,14 +48,10 @@ public class addressPage extends baseClass
 
     public void addAddressPerform() throws InterruptedException
     {
-        actionHandler.click(signinbtn);
-        email.sendKeys(super.pros.getProperty("email"));
-        password.sendKeys(super.pros.getProperty("password"));
-        loginBtn.click();
-        Thread.sleep(2000);
-
         Reporter.log("Add Address Test Start");
         log.startTestCase("Start Add Address Test");
+        Thread.sleep(1000);
+
         actionHandler.click(addAddressbtn);
         Assert.assertEquals("Addresses", driver.getTitle());
         Thread.sleep(1000);
@@ -85,6 +67,7 @@ public class addressPage extends baseClass
         dropdownState.selectByVisibleText(pros.getProperty("state"));
         phone.sendKeys(pros.getProperty("phone"));
         saveAddressbtn.click();
+
         log.endTestCase("End Add Address Test");
         Reporter.log("Add Address Test End");
     }
