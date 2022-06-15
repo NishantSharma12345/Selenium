@@ -6,8 +6,8 @@
       <class name="Pages.loginPageTest">
         <methods>
           <include name="setup"/>
-          <include name="exit"/>
           <include name="loginPerformTest"/>
+          <include name="exit"/>
           <include name="init"/>
         </methods>
       </class> <!-- Pages.loginPageTest -->

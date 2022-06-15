@@ -1,4 +1,5 @@
 package BaseClass;
+import Helper.dateClass;
 import Helper.listener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -19,6 +20,7 @@ import java.util.Properties;
 @Listeners(listener.class)
 public class baseClass
 {
+
     public static WebDriver driver;
     public static Properties pros;
     public baseClass()
@@ -53,7 +55,8 @@ public class baseClass
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         String currentDate = dateClass.dateFormat();
-        File screenshotName = new File("C://Users//ASUS//IdeaProjects//Selenium//test-output//screenshots//" + currentDate + ".png");
+        File screenshotName= new File(System.getProperty("user.dir")+"/test-output/screenshots/"+currentDate+".png");
+        //File screenshotName = new File("C://Users//ASUS//IdeaProjects//Selenium//test-output//screenshots//" + currentDate + ".png");
         FileUtils.copyFile(scrFile,screenshotName);
         Reporter.log("<br><img src='"+ screenshotName +"' height='400' width='400'/><br>");
 

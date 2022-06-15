@@ -14,20 +14,20 @@
       <![CDATA[onTestFailure method finishedloginPerformTest]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-06-14T23:50:08 IST" name="Default Suite" finished-at="2022-06-14T23:50:11 IST" duration-ms="2781">
+  <suite started-at="2022-06-15T23:21:30 IST" name="Default Suite" finished-at="2022-06-15T23:21:33 IST" duration-ms="2922">
     <groups>
     </groups>
-    <test started-at="2022-06-14T23:50:08 IST" name="Selenium" finished-at="2022-06-14T23:50:11 IST" duration-ms="2781">
+    <test started-at="2022-06-15T23:21:30 IST" name="Selenium" finished-at="2022-06-15T23:21:33 IST" duration-ms="2922">
       <class name="Pages.loginPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:06 IST" name="setup" finished-at="2022-06-14T23:50:08 IST" duration-ms="2278" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Pages.loginPageTest@add0edd]" started-at="2022-06-15T23:21:28 IST" name="setup" finished-at="2022-06-15T23:21:30 IST" duration-ms="2305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="init()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:08 IST" name="init" finished-at="2022-06-14T23:50:08 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:Pages.loginPageTest@add0edd]" started-at="2022-06-15T23:21:30 IST" name="init" finished-at="2022-06-15T23:21:31 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="loginPerformTest()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:08 IST" name="loginPerformTest" finished-at="2022-06-14T23:50:11 IST" duration-ms="2733" status="FAIL">
+        <test-method signature="loginPerformTest()[pri:0, instance:Pages.loginPageTest@add0edd]" started-at="2022-06-15T23:21:31 IST" name="loginPerformTest" finished-at="2022-06-15T23:21:33 IST" duration-ms="2781" status="FAIL">
           <exception class="java.io.IOException">
             <message>
               <![CDATA[The filename, directory name, or volume label syntax is incorrect]]>
@@ -39,8 +39,8 @@ at java.base/java.io.WinNTFileSystem.canonicalize(WinNTFileSystem.java:462)
 at java.base/java.io.File.getCanonicalPath(File.java:626)
 at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:1064)
 at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:1028)
-at BaseClass.baseClass.screenCapture(baseClass.java:62)
-at Pages.loginPage.loginPerform(loginPage.java:48)
+at BaseClass.baseClass.screenCapture(baseClass.java:60)
+at Pages.loginPage.loginPerform(loginPage.java:47)
 at Pages.loginPageTest.loginPerformTest(loginPageTest.java:26)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
@@ -82,7 +82,7 @@ at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
             </line>
           </reporter-output>
         </test-method> <!-- loginPerformTest -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:Pages.loginPageTest@78b729e6]" started-at="2022-06-14T23:50:11 IST" name="exit" finished-at="2022-06-14T23:50:11 IST" duration-ms="41" status="PASS">
+        <test-method is-config="true" signature="exit()[pri:0, instance:Pages.loginPageTest@add0edd]" started-at="2022-06-15T23:21:33 IST" name="exit" finished-at="2022-06-15T23:21:33 IST" duration-ms="48" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
