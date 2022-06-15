@@ -44,10 +44,11 @@ public class loginPage extends baseClass
         log.startTestCase("Start Login Test");
         Thread.sleep(1000);
 
-        screenCapture();
+
         email.sendKeys(super.pros.getProperty("email"));
         Assert.assertEquals("Login", driver.getTitle());
         password.sendKeys(super.pros.getProperty("password"));
+        screenCapture();
         loginBtn.click();
 
         log.endTestCase("End Login Test");
